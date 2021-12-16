@@ -6,7 +6,7 @@
 
 	<description>Fast navigation between entries on Publish single pages.</description>
 
-	<repo type="github">https://github.com/vlad-ghita/entry_nav</repo>
+	<repo type="github">https://github.com/animaux/entry_nav</repo>
 
 	<types>
 		<type>Interface</type>
@@ -21,6 +21,9 @@
 	</authors>
 
 	<releases>
+		<release version="1.0.1" date="2021-12-16" min="2.7.10">
+		  - PHP8 Fixes (require PHP7)
+		</release>
 		<release version="1.0.0" date="2012-10-04" min="2.3"><![CDATA[
 			* First release.
 		]]></release>

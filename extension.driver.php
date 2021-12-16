@@ -29,7 +29,7 @@
 			$callback = Administration::instance()->getPageCallback();
 
 			// append assets
-			if( $callback['context']['page'] == 'edit' ){
+			if( $callback['context']['page'] ?? null == 'edit' ){
 				Administration::instance()->Page->addStylesheetToHead( URL.'/extensions/entry_nav/assets/entry_nav.publish_single.css', "screen" );
 			}
 		}
@@ -37,7 +37,7 @@
 		public function dAdminPagePreGenerate($context){
 			$callback = Administration::instance()->getPageCallback();
 
-			if( $callback['context']['page'] === 'edit' ){
+			if( $callback['context']['page'] ?? null === 'edit' ){
 				/** @var $cxt XMLElement */
 				$cxt = $context['oPage']->Context;
 				if( !$cxt instanceof XMLElement ) return;
@@ -51,14 +51,14 @@
 				}
 
 				// fetch entries
-				$section_id = SectionManager::fetchIDFromHandle( $callback['context']['section_handle'] );
+				$section_id = SectionManager::fetchIDFromHandle( $callback['context']['section_handle'] ?? null );
 				$section = SectionManager::fetch( $section_id );
 
 				EntryManager::setFetchSorting( $section->getSortingField(), $section->getSortingOrder() );
 				$entries = EntryManager::fetch( null, $section_id, null, null, null, null, null, false, false );
 
 				// get next and prev
-				$entry_id = $prev_id = $next_id = $callback['context']['entry_id'];
+				$entry_id = $prev_id = $next_id = $callback['context']['entry_id'] ?? null;
 
 				$count = count( $entries );
 				for( $i = 0 ; $i < $count ; $i++ )
