@@ -21,6 +21,9 @@
 	</authors>
 
 	<releases>
+		<release version="1.0.2" date="2022-05-19" min="2.7.10">
+		  - PHP8.1 Fixes
+		</release>
 		<release version="1.0.1" date="2021-12-16" min="2.7.10">
 		  - PHP8 Fixes (require PHP7)
 		</release>

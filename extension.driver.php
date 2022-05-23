@@ -39,7 +39,7 @@
 
 			if( $callback['context']['page'] ?? null === 'edit' ){
 				/** @var $cxt XMLElement */
-				$cxt = $context['oPage']->Context;
+				$cxt = $context['oPage']->Context ?? false;
 				if( !$cxt instanceof XMLElement ) return;
 
 				$actions = $cxt->getChildByName( 'ul', 0 );
